@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Memory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+    <div id="wordGame">
+        <div id="gameTitle"></div>
+        <div id="endOfGame"></div>
+
+        <!-- <div id="wrapper"> 
+            <button class="submitBtn" onclick="switchMode()">Done</button>
+        </div>-->
+        <div id="gridBtnWrap">
+            <div> <button class="gridBtn" onclick="myGame.goBackToSettings()"><b>SETTINGS</b></button></div>
+            <div class="inputGrid"> <button id="submitBtn" class="gridBtn" onclick="myGame.switchWordGameMode()"><b>DONE</b></button></div>
+        </div>
+
+
+        <div id='settingsScreen'>
+            <div id="settingsTitle">
+                <h1 class="settingsH1">Game Settings</h1>
+            </div>
+            <div id='settingsMenu'>
+                
+                <div class="settingsText">Number of words:</div><div class="settingsVal"><input id="numWordsField" type="number" value='25' min='1' max='50' onchange="myGame.setSettingsWords()"> / <span id="numWordsText">maxWords</span></div>
+                <div class="settingsText">Time per word:</div><div class="settingsVal"><input id="durationField" type="number" value='10' min = 1 onchange="myGame.setSettingsDuration()"> s</div>
+                <div class="settingsText">Fontsize:</div><div class="settingsVal"><input id="fontSizeField" type="number" value='18' onchange="myGame.setFontSize()" min='5' max='50'> px</div>
+                <div id="settingsWrapper">
+                    <button class="settingsBtn" onclick="myGame.settingsBtn()"><b>START</b></button>
+                
+                </div>
+            </div>
+
+            <div id="settingsExampleHeader">
+                <p id="settingsExampleText">
+                    <b>Font-size example</b>
+                </p>
+                
+            </div>
+
+        </div>
+            
+        <div id="gridGame"></div>
+    </div>
+
+    <div id="btnGridWrap" style="display: none;">
+        <div id="levelTitle">Level 1</div>
+        <div id="buttonTitle">Remember the pattern</div>
+        <div id="buttonGame">
+        </div>
+        <div id="btnGameWrapButtons"><button class="btnGameBtns" onclick="btnGame.goBackToBtnSettings()">Settings</button><button class="btnGameBtns" onclick="btnGame.restartGame()">Restart</button></div>
+    </div>
+
+    <div id='settingsScreenBtn' style="display: none;">
+        <div id="settingsTitle">
+            <h1 class="settingsH1">Game Settings</h1>
+        </div>
+        <div id='settingsMenu'>
+            
+            <div class="settingsText">Time per level:</div><div class="settingsVal"><input id="timeBtnGame" type="number" value='1' min='1' max='100' onchange="btnGame.setBtnTime()"> / s</div>
+            <div id="settingsWrapper">
+                <button class="settingsBtn" onclick="btnGame.startBtnGame()"><b>START</b></button>
+            
+            </div>
+        </div>
+
+    </div>
+
+    <div id="selectGame">
+
+        <div><button onclick="startWordGame()">Remember the words</button></div>
+        <div><button onclick="startBtnGame()">Remember the pattern</button></div>
+
+    </div>
+    
+    
+    
+    <script src="./js/allWords.js"></script>
+    <script src="./js/memory.js"></script>
+    <script src="./js/btnMemory.js"></script>
+    <script src="./js/introFile.js"></script>
+
+</body>
+</html>
